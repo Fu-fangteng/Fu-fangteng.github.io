@@ -1,0 +1,144 @@
+/* reset.css */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #F5EFFF;
+    /* 背景色 */
+    line-height: 1.6;
+}
+
+/* Header 样式 */
+header {
+    background-color: #A594F9;
+    /* Header 背景色 */
+    padding: 20px;
+    text-align: center;
+}
+
+/* 导航样式 */
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    display: inline-block;
+    margin: 0 30px;
+}
+
+nav ul li a {
+    color: #e8f994;
+    /* 链接颜色 */
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px 15px;
+    transition: background-color 0.3s ease;
+}
+
+nav ul li a:hover {
+    background-color: #7D6DF3;
+    /* Hover 背景颜色 */
+    border-radius: 5px;
+}
+
+/* 头像样式 */
+#avatar {
+    
+    display: flex;
+    /* 使用 Flexbox 布局 */
+    align-items: center;
+    /* 垂直居中对齐 */
+    max-width: 800px;
+    /* 最大宽度 */
+    margin: 30px auto;
+    /* 上下外边距，左右居中 */
+    padding: 20px;
+    background-color: #fff;
+    /* 头像背景色 */
+    border-radius: 15px;
+    /* 圆角边框 */
+}
+#work_experience {
+    display: grid;
+    /* 使用 Flexbox 布局 */
+    align-items: center;
+    /* 垂直居中对齐 */
+    max-width: 800px;
+    /* 最大宽度 */
+    margin: 30px auto;
+    /* 上下外边距，左右居中 */
+    padding: 20px;
+    background-color: #fff;
+    /* 头像背景色 */
+    border-radius: 15px;
+    /* 圆角边框 */
+}
+.avatar-image {
+    display: block;
+    /* 改为 block，使其能被正常居中 */
+    height: 800px;
+    width: 860px;
+    object-fit: cover;
+    /* 确保图片的比例正确 */
+    margin: 30px auto;
+    /* 上方的外边距为30px，左右自动居中 */
+    border-radius: 100px;
+    /* 圆角效果 */
+}
+
+.avatar-text {
+    flex: 1;
+    /* 使文本区域占据剩余空间 */
+}
+
+.name {
+    font-size: 36px;
+    font-weight: bold;
+    margin: 10px 0;
+    color: #7D6DF3;
+    /* 姓名颜色 */
+}
+.work_experience {
+    font-size: 36px;
+    font-weight: bold;
+    margin: 10px 0;
+    color: #7D6DF3;
+    /* 姓名颜色 */
+}
+.address {
+    font-size: 18px;
+    /* 调整字体大小 */
+    margin: 5px 0;
+    color: #555;
+    /* 地址颜色 */
+}
+
+.content {
+    text-align: left;
+    /* 左对齐 */
+    font-size: 20px;
+    margin: 10px 0;
+    line-height: 1.5;
+    color: #000;
+    /* 内容颜色 */
+}
+
+/* 移动设备样式 */
+@media (max-width: 600px) {
+    .name {
+        font-size: 20px;
+        /* 姓名字体大小 */
+    }
+
+    .address,
+    .content {
+        font-size: 16px;
+        /* 地址和内容字体大小 */
+    }
+}

@@ -1,0 +1,35 @@
+body,
+html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'Arial', sans-serif;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    color: white;
+    text-align: center;
+    background-image: url('D: \personal webpage\imgs\project_lapse.png');
+    /* 请替换为你的图片路径 */
+    background-size: cover;
+    background-position: center;
+}
+
+.title {
+    font-size: 3em;
+    font-weight: bold;
+    font-family: 'Cursive', sans-serif;
+    /* 手写风格 */
+    margin: 0;
+}
+
+.subtitle {
+    font-size: 1.5em;
+    font-weight: normal;
+    margin-top: 10px;
+}
