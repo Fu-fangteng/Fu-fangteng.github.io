@@ -26,7 +26,7 @@ nav ul li {
 }
 
 nav ul li a {
-    color: #e8f994;
+    color: #010101;
     text-decoration: none;
     font-weight: bold;
     padding: 10px 15px;
@@ -39,89 +39,6 @@ nav ul li a:hover {
 }
 
 
-
-#bk {
-    background-color: #CDC1FF;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-
-}
-
-#bk img {
-    max-width: 100%;
-    height: auto;
-    margin-bottom: 15px;
-}
-
-#bk .info {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    flex-wrap: wrap;
-}
-
-#bk p {
-    margin: 0;
-    padding: 0 10px;
-    font-size: 24px;
-    line-height: 1.5;
-}
-
-#bk p.name {
-    font-weight: bold;
-    font-size: 24px;
-}
-
-#bk a {
-    text-decoration: none;
-    color: #0073e6;
-}
-
-#bk a:hover {
-    text-decoration: underline;
-}
-
-.Biography {
-            max-width: 1200px;
-            margin: 0 auto;
-            background-color: #E5D9F2;
-            padding: 20px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-h1 {
-    font-size: 36px;
-            text-align: center;
-            color: #333;
-}
-
-        .bio-image {
-            text-align: center;
-        }
-
-        .bio-image img {
-            width: 500px;
-            height: 500px;
-            object-fit: cover;
-            
-        }
-
-        .bio-content {
-            font-size: 24px;
-            margin-top: 20px;
-        }
-
-        .bio-content p {
-            margin-bottom: 10px;
-        }
-
-        .bio-content h2 {
-            text-align: center;
-            color: #555;
-            margin-top: 20px;
-        }
 
 
 /* 响应式设计：针对较小屏幕 */

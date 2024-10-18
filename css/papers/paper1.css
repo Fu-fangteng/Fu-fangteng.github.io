@@ -1,0 +1,32 @@
+
+
+#paper1 .paper-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 10px;
+    transition: box-shadow 0.3s ease;
+    background-color: #fff;
+}
+
+
+
+
+#paper1 .paper-info {
+    padding-left: 20px;
+    width: 50%;
+}
+
+#paper1 .paper-info h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.paper-tags {
+    font-size: 14px;
+    color: #888;
+}
+

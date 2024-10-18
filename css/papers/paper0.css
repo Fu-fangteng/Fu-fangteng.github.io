@@ -1,0 +1,24 @@
+#paper0 .paper-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 200px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 10px;
+
+    background-color: #3000ee;
+}
+
+
+#paper0 .paper-info {
+    padding-left: 0%;
+    width: 100%;
+}
+
+#paper0 .paper-info h3 {
+    text-align: center;
+    font-size: 30px;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+

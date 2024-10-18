@@ -1,0 +1,36 @@
+
+main {
+    padding: 20px;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 36px;
+    color: #333;
+}
+
+.paper-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 50px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 10px;
+    transition: box-shadow 0.3s ease;
+    background-color: #CDC1FF;
+}
+
+.paper-item img {
+    width: 800px;
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+/* Published and Read papers section */
+#published-papers,
+#read-papers {
+    margin-bottom: 40px;
+}
+
