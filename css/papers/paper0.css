@@ -1,12 +1,12 @@
 #paper0 .paper-item {
     display: flex;
     align-items: center;
-    margin-bottom: 200px;
+    margin-bottom: 20px;
     border: 1px solid #ddd;
     border-radius: 8px;
     padding: 10px;
 
-    background-color: #3000ee;
+    background-color: #CDC1FF;
 }
 
 
