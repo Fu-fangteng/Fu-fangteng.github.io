@@ -5,6 +5,7 @@ import About from "./pages/About";
 import Projects from "./pages/Projects";
 import Papers from "./pages/Papers";
 import Contact from "./pages/Contact";
+import TextCursor from "./pages/TextCursor";
 import "./App.css";
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
       <div className="App">
         <Header />
         <main>
+          <TextCursor />
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
