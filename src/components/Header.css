@@ -1,49 +1,113 @@
 .header {
-  background-color: #A594F9;
-  padding: 20px;
-  text-align: center;
-  width: 100%;
-  position: relative;
+  background: linear-gradient(90deg, #a594f9 0%, #7d6df3 100%);
+  box-shadow: 0 2px 16px rgba(125, 109, 243, 0.08);
+  position: sticky;
+  top: 0;
   z-index: 1000;
+  transition: background 0.3s;
+}
+
+.header-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  height: 64px;
+  padding: 0 32px;
+  justify-content: space-between;
+}
+
+.logo {
+  font-family: 'Segoe UI', 'Arial', sans-serif;
+  font-size: 1.7rem;
+  font-weight: bold;
+  color: #fff;
+  letter-spacing: 2px;
+  text-shadow: 0 2px 8px #7d6df355;
+  user-select: none;
+  transition: color 0.3s;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
 }
 
 .nav-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
   display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
+  list-style: none;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
 }
 
 .nav-item {
-  display: inline-block;
-  margin: 0 30px;
+  margin: 0 10px;
 }
 
 .nav-link {
-  color: #010101 !important;
-  text-decoration: none !important;
-  font-weight: bold;
-  padding: 10px 15px;
-  transition: background-color 0.3s ease;
-  border-radius: 5px;
+  position: relative;
   display: inline-block;
+  padding: 8px 18px;
+  font-size: 1.08rem;
+  font-weight: 500;
+  color: #fff;
+  border-radius: 6px;
+  transition: background 0.2s, color 0.2s, transform 0.2s;
+  text-decoration: none;
+  letter-spacing: 0.5px;
+  overflow: hidden;
 }
 
-.nav-link:hover {
-  background-color: #7D6DF3;
-  color: #010101 !important;
+.nav-link::after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 20%;
+  bottom: 4px;
+  width: 60%;
+  height: 3px;
+  background: linear-gradient(90deg, #fff 0%, #a594f9 100%);
+  border-radius: 2px;
+  opacity: 0;
+  transform: scaleX(0);
+  transition: all 0.3s cubic-bezier(.23,1.01,.32,1);
 }
 
+.nav-link:hover,
 .nav-link.active {
-  background-color: #7D6DF3;
-  color: #010101 !important;
+  background: rgba(255,255,255,0.12);
+  color: #fff;
+  transform: translateY(-2px) scale(1.04);
 }
 
-/* 响应式设计：针对较小屏幕 */
+.nav-link:hover::after,
+.nav-link.active::after {
+  opacity: 1;
+  transform: scaleX(1);
+}
+
 @media (max-width: 768px) {
+  .header-inner {
+    flex-direction: column;
+    height: auto;
+    padding: 0 10px;
+  }
+  .logo {
+    margin-bottom: 8px;
+    font-size: 1.2rem;
+  }
+  .nav-list {
+    flex-direction: column;
+    gap: 0;
+  }
   .nav-item {
-    margin: 0 15px;
+    margin: 0;
+  }
+  .nav-link {
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
+    font-size: 1rem;
   }
 } 

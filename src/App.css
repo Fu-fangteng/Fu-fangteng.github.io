@@ -10,10 +10,11 @@ html, body {
 }
 
 body {
-  font-family: Arial, sans-serif;
-  background-color: #F5EFFF;
+  font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #F5EFFF 0%, #E5D9F2 50%, #CDC1FF 100%);
   line-height: 1.6;
   overflow-x: hidden;
+  color: #2D1B69;
 }
 
 #root {
@@ -37,6 +38,12 @@ main {
 a {
   text-decoration: none;
   color: inherit;
+  transition: all 0.3s ease;
+}
+
+a:hover {
+  color: #7D6DF3;
+  transform: translateY(-2px);
 }
 
 /* 全局按钮样式 */
@@ -44,12 +51,14 @@ button {
   cursor: pointer;
   border: none;
   outline: none;
+  transition: all 0.3s ease;
 }
 
 /* 全局图片样式 */
 img {
   max-width: 100%;
   height: auto;
+  transition: transform 0.3s ease;
 }
 
 /* 滚动条样式 */
@@ -58,14 +67,51 @@ img {
 }
 
 ::-webkit-scrollbar-track {
-  background: #f1f1f1;
+  background: rgba(165, 148, 249, 0.1);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #A594F9;
+  background: linear-gradient(180deg, #A594F9, #7D6DF3);
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #7D6DF3;
+  background: linear-gradient(180deg, #7D6DF3, #5A4FDB);
+}
+
+/* 全局动画类 */
+.fade-in {
+  animation: fadeIn 0.8s ease-in;
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+.slide-up {
+  animation: slideUp 0.6s cubic-bezier(.23,1.01,.32,1);
+}
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(30px);}
+  to { opacity: 1; transform: translateY(0);}
+}
+
+/* 鼠标跟随炫彩圆点 */
+.cursor-follower {
+  position: fixed;
+  width: 18px;
+  height: 18px;
+  background: radial-gradient(circle, #A594F9 60%, #7D6DF3 100%);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  mix-blend-mode: difference;
+  transition: transform 0.08s cubic-bezier(.23,1.01,.32,1);
+  opacity: 0.7;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  body {
+    font-size: 14px;
+  }
 }

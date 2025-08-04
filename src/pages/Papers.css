@@ -58,17 +58,17 @@
 }
 
 .paper-item {
-  background-color: #E5D9F2;
-  border-radius: 12px;
-  padding: 25px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  width: 100%;
+  background: #E5D9F2;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px #a594f955;
+  transition: transform 0.3s, box-shadow 0.3s;
+  margin-bottom: 24px;
+  padding: 20px;
+  animation: fadeIn 0.8s;
 }
-
 .paper-item:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  transform: scale(1.02) translateY(-3px);
+  box-shadow: 0 8px 25px #a594f9aa;
 }
 
 .paper-item.published {
