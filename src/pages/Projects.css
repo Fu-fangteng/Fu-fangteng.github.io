@@ -1,0 +1,111 @@
+.projects {
+  min-height: 100vh;
+  width: 100%;
+  padding: 40px 20px;
+  background-color: #F5EFFF;
+  display: flex;
+  flex-direction: column;
+}
+
+.projects-container {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  flex: 1;
+}
+
+.projects-title {
+  font-size: 36px;
+  text-align: center;
+  color: #333;
+  margin-bottom: 40px;
+  font-weight: bold;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 30px;
+  width: 100%;
+}
+
+.project-item {
+  background-color: #E5D9F2;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 100%;
+}
+
+.project-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.project-image {
+  width: 100%;
+  height: 250px;
+  overflow: hidden;
+}
+
+.project-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.project-item:hover .project-image img {
+  transform: scale(1.05);
+}
+
+.project-content {
+  padding: 25px;
+}
+
+.project-title {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+
+.project-description {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #555;
+  margin: 0;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  .projects {
+    padding: 20px 15px;
+  }
+  
+  .projects-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .projects-title {
+    font-size: 28px;
+  }
+  
+  .project-title {
+    font-size: 20px;
+  }
+  
+  .project-description {
+    font-size: 14px;
+  }
+  
+  .project-image {
+    height: 200px;
+  }
+  
+  .project-content {
+    padding: 20px;
+  }
+} 

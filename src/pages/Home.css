@@ -1,0 +1,116 @@
+.home {
+  min-height: 100vh;
+}
+
+.hero-section {
+  background-color: #CDC1FF;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 20px 0;
+}
+
+.hero-image {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 15px;
+}
+
+.hero-info {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.hero-info p {
+  margin: 0;
+  padding: 0 10px;
+  font-size: 24px;
+  line-height: 1.5;
+}
+
+.hero-info .name {
+  font-weight: bold;
+  font-size: 24px;
+}
+
+.hero-info a {
+  text-decoration: none;
+  color: #0073e6;
+}
+
+.hero-info a:hover {
+  text-decoration: underline;
+}
+
+.biography-section {
+  padding: 40px 20px;
+}
+
+.biography {
+  max-width: 1200px;
+  margin: 0 auto;
+  background-color: #E5D9F2;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+.biography h1 {
+  font-size: 36px;
+  text-align: center;
+  color: #333;
+  margin-bottom: 30px;
+}
+
+.bio-image {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.bio-image img {
+  width: 500px;
+  height: 500px;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.bio-content {
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+.bio-content p {
+  margin-bottom: 15px;
+}
+
+.bio-content h2 {
+  text-align: center;
+  color: #555;
+  margin-top: 30px;
+  margin-bottom: 20px;
+  font-size: 24px;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  .hero-info p {
+    font-size: 18px;
+  }
+  
+  .bio-image img {
+    width: 300px;
+    height: 300px;
+  }
+  
+  .bio-content {
+    font-size: 16px;
+  }
+  
+  .biography h1 {
+    font-size: 28px;
+  }
+} 

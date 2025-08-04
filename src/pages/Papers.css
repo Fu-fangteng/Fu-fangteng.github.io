@@ -1,0 +1,179 @@
+.papers {
+  min-height: 100vh;
+  width: 100%;
+  padding: 40px 20px;
+  background-color: #F5EFFF;
+  display: flex;
+  flex-direction: column;
+}
+
+.papers-container {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  flex: 1;
+}
+
+.description-section {
+  margin-bottom: 40px;
+  width: 100%;
+}
+
+.description-bar {
+  background-color: #E5D9F2;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-left: 4px solid #A594F9;
+  width: 100%;
+}
+
+.description-text {
+  font-size: 18px;
+  line-height: 1.6;
+  color: #333;
+  margin: 0;
+  text-align: center;
+  font-style: italic;
+}
+
+.section-title {
+  font-size: 32px;
+  text-align: center;
+  color: #333;
+  margin-bottom: 30px;
+  font-weight: bold;
+}
+
+.published-papers {
+  margin-bottom: 60px;
+  width: 100%;
+}
+
+.papers-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 30px;
+  width: 100%;
+}
+
+.paper-item {
+  background-color: #E5D9F2;
+  border-radius: 12px;
+  padding: 25px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 100%;
+}
+
+.paper-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.paper-item.published {
+  border-left: 4px solid #A594F9;
+}
+
+.paper-item.published-with-image {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.paper-link {
+  display: block;
+  text-decoration: none;
+  width: 100%;
+}
+
+.paper-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+.paper-item:hover .paper-image {
+  transform: scale(1.02);
+}
+
+.paper-info {
+  flex: 1;
+  width: 100%;
+}
+
+.paper-title {
+  font-size: 18px;
+  color: #333;
+  margin-bottom: 15px;
+  line-height: 1.4;
+  font-weight: bold;
+}
+
+.paper-title a {
+  color: #333;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.paper-title a:hover {
+  color: #A594F9;
+}
+
+.paper-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.tag {
+  background-color: #A594F9;
+  color: white;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  .papers {
+    padding: 20px 15px;
+  }
+  
+  .description-bar {
+    padding: 20px;
+  }
+  
+  .description-text {
+    font-size: 16px;
+  }
+  
+  .papers-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .section-title {
+    font-size: 24px;
+  }
+  
+  .paper-title {
+    font-size: 16px;
+  }
+  
+  .paper-image {
+    height: 150px;
+  }
+  
+  .tag {
+    font-size: 11px;
+    padding: 3px 10px;
+  }
+  
+  .paper-item {
+    padding: 20px;
+  }
+} 
