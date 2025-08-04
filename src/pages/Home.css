@@ -1,14 +1,33 @@
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow-x: hidden !important;
+}
+
 .home {
   min-height: 100vh;
+  height: 100vh;
+  width: 100%;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
 }
 
 .hero-section {
   position: relative;
   height: 100vh;
+  width: 100%;
+  min-height: 100vh;
+  min-width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
+  margin: 0;
+  padding: 0;
+  border-radius: 0 !important;
 }
 
 .hero-background {
@@ -21,10 +40,24 @@
 }
 
 .hero-image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  filter: brightness(0.7) contrast(1.1);
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: center !important;
+  filter: brightness(0.6) contrast(1.2);
+  position: absolute;
+  top: 0;
+  left: 0;
+  animation: subtleZoom 20s ease-in-out infinite;
+}
+
+@keyframes subtleZoom {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
 }
 
 .hero-overlay {
@@ -33,45 +66,77 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(135deg, rgba(45, 27, 105, 0.6), rgba(165, 148, 249, 0.4));
+  background: linear-gradient(135deg, 
+    rgba(45, 27, 105, 0.7) 0%, 
+    rgba(165, 148, 249, 0.5) 50%, 
+    rgba(45, 27, 105, 0.7) 100%);
+  z-index: 1;
 }
 
 .hero-info {
   position: relative;
-  z-index: 2;
+  z-index: 3;
   text-align: center;
   color: white;
-  max-width: 800px;
-  padding: 0 20px;
+  max-width: 900px;
+  padding: 0 30px;
+  animation: fadeInUp 1.2s ease-out;
+}
+
+.hero-info.fade-in {
+  animation: fadeInUp 1.2s ease-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .hero-text h1.name {
-  font-size: 4rem;
+  font-size: clamp(2.5rem, 8vw, 5rem);
   font-weight: 700;
-  margin-bottom: 1rem;
-  background: linear-gradient(45deg, #fff, #A594F9);
+  margin-bottom: 1.5rem;
+  background: linear-gradient(45deg, #fff, #A594F9, #fff);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  animation: glow 2s ease-in-out infinite alternate;
+  animation: glow 3s ease-in-out infinite alternate;
+  text-shadow: 0 0 30px rgba(165, 148, 249, 0.3);
+  letter-spacing: 2px;
 }
 
 @keyframes glow {
-  from { text-shadow: 0 0 20px rgba(165, 148, 249, 0.5); }
-  to { text-shadow: 0 0 30px rgba(165, 148, 249, 0.8); }
+  from { 
+    text-shadow: 0 0 20px rgba(165, 148, 249, 0.5);
+    filter: brightness(1);
+  }
+  to { 
+    text-shadow: 0 0 40px rgba(165, 148, 249, 0.8);
+    filter: brightness(1.1);
+  }
 }
 
 .hero-text .title {
-  font-size: 1.5rem;
-  margin-bottom: 0.5rem;
+  font-size: clamp(1.2rem, 4vw, 2rem);
+  margin-bottom: 1rem;
   color: #A594F9;
-  font-weight: 300;
+  font-weight: 400;
+  text-shadow: 0 2px 10px rgba(165, 148, 249, 0.3);
+  letter-spacing: 1px;
 }
 
 .hero-text .description {
-  font-size: 1.2rem;
-  margin-bottom: 2rem;
-  opacity: 0.9;
+  font-size: clamp(1rem, 3vw, 1.4rem);
+  margin-bottom: 3rem;
+  opacity: 0.95;
+  line-height: 1.6;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
 }
 
 .hero-links {
@@ -79,31 +144,45 @@
   gap: 2rem;
   justify-content: center;
   flex-wrap: wrap;
+  margin-top: 2rem;
 }
 
 .hero-links a {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  padding: 1rem 2rem;
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  gap: 0.8rem;
+  padding: 1.2rem 2.5rem;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(15px);
+  border: 2px solid rgba(255, 255, 255, 0.3);
   border-radius: 50px;
   color: white;
   text-decoration: none;
-  transition: all 0.3s ease;
-  font-weight: 500;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  font-weight: 600;
+  font-size: 1.1rem;
+  letter-spacing: 0.5px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
 }
 
 .hero-links a:hover {
-  background: rgba(165, 148, 249, 0.3);
-  transform: translateY(-3px);
-  box-shadow: 0 10px 25px rgba(165, 148, 249, 0.3);
+  background: rgba(165, 148, 249, 0.4);
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 15px 35px rgba(165, 148, 249, 0.4);
+  border-color: rgba(165, 148, 249, 0.6);
+}
+
+.hero-links a:active {
+  transform: translateY(-2px) scale(1.02);
 }
 
 .hero-links .icon {
-  font-size: 1.2rem;
+  font-size: 1.3rem;
+  transition: transform 0.3s ease;
+}
+
+.hero-links a:hover .icon {
+  transform: scale(1.2);
 }
 
 .biography-section {
@@ -144,10 +223,10 @@
 }
 
 .bio-image {
-  width: 300px;
-  height: 300px;
+  width: 1000px;
+
   object-fit: cover;
-  border-radius: 50%;
+  border-radius: 10%;
   box-shadow: 0 20px 40px rgba(165, 148, 249, 0.3);
   transition: all 0.3s ease;
 }
@@ -164,7 +243,7 @@
   width: 100%;
   height: 100%;
   background: rgba(165, 148, 249, 0.8);
-  border-radius: 50%;
+  border-radius: 10%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -179,6 +258,7 @@
 .overlay-content {
   color: white;
   text-align: center;
+  font-size: 50px;
   font-weight: 600;
 }
 
@@ -223,13 +303,23 @@
 
 /* 响应式设计 */
 @media (max-width: 768px) {
-  .hero-text h1.name {
-    font-size: 2.5rem;
+  .hero-section {
+    padding: 0 15px;
+  }
+  
+  .hero-info {
+    padding: 0 15px;
   }
   
   .hero-links {
     flex-direction: column;
     align-items: center;
+    gap: 1.5rem;
+  }
+  
+  .hero-links a {
+    padding: 1rem 2rem;
+    font-size: 1rem;
   }
   
   .bio-image {
@@ -239,9 +329,38 @@
   
   .biography {
     padding: 20px;
+    margin: 0 15px;
   }
   
   .bio-header h1 {
     font-size: 2rem;
   }
+}
+
+@media (max-width: 480px) {
+  .hero-section {
+    padding: 0 10px;
+  }
+  
+  .hero-info {
+    padding: 0 10px;
+  }
+  
+  .hero-links a {
+    padding: 0.8rem 1.5rem;
+    font-size: 0.9rem;
+  }
+  
+  .biography {
+    padding: 15px;
+    margin: 0 10px;
+  }
+} 
+
+body {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE 10+ */
+}
+body::-webkit-scrollbar {
+  display: none; /* Chrome/Safari/Webkit */
 } 

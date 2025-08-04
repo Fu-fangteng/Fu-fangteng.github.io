@@ -43,7 +43,7 @@ const Projects = () => {
       alt: "Cartoon Dataset",
       tags: ["AI Research", "Dataset Building", "Machine Learning"],
       link: "#",
-      status: "In Progress",
+      status: "Complete",
     },
   ];
 
@@ -75,7 +75,6 @@ const Projects = () => {
                 <div className="project-overlay">
                   <div className="overlay-content">
                     <span className="project-status">{project.status}</span>
-                    <button className="view-project-btn">View Project</button>
                   </div>
                 </div>
               </div>

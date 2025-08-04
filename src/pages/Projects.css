@@ -106,21 +106,6 @@
   backdrop-filter: blur(10px);
 }
 
-.view-project-btn {
-  background: linear-gradient(45deg, #A594F9, #7D6DF3);
-  color: white;
-  border: none;
-  padding: 12px 24px;
-  border-radius: 25px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.view-project-btn:hover {
-  transform: scale(1.05);
-  box-shadow: 0 10px 20px rgba(165, 148, 249, 0.4);
-}
 
 .project-content {
   padding: 30px;

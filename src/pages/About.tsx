@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import myImage from "../assets/imgs/my_img.jpg";
+import myImage from "../assets/imgs/me_good.jpg";
 import "./About.css";
 
 const About = () => {
@@ -11,11 +11,12 @@ const About = () => {
 
   const skills = [
     { name: "Python", level: 85, icon: "🐍" },
-    { name: "C++", level: 75, icon: "⚡" },
+    { name: "C++", level: 60, icon: "⚡" },
     { name: "JavaScript", level: 80, icon: "🟨" },
     { name: "HTML/CSS", level: 90, icon: "🎨" },
+    { name: "React", level: 40, icon: "⚛️" },
     { name: "Machine Learning", level: 70, icon: "🤖" },
-    { name: "Data Analysis", level: 75, icon: "📊" },
+    { name: "Deep Learning", level: 80, icon: "📊" },
   ];
 
   return (
@@ -48,36 +49,27 @@ const About = () => {
           <div className="intro-card">
             <div className="card-icon">👋</div>
             <h3>Welcome</h3>
-            <p>
-              Hi, I am Fangteng FU, or you can call me Magnus.(・∀・) Welcome to
-              my webpage!
-            </p>
+            <p>Hi, I am Fangteng FU, or you can call me Magnus.(・∀・)</p>
           </div>
 
           <div className="intro-card">
             <div className="card-icon">🎓</div>
             <h3>Education</h3>
-            <p>
-              Now I am a Sophomore studying in HKUST-GZ, majoring in AI and Data
-              Science.
-            </p>
+            <p>Now I am a Sophomore studying in HKUST-GZ, majoring in AI.</p>
           </div>
 
           <div className="intro-card">
             <div className="card-icon">🔬</div>
             <h3>Research</h3>
-            <p>
-              Currently conducting research in cartoon animation generation and
-              dataset building at CIS Lab.
-            </p>
+            <p>Currently conducting research in HKUST(GZ) NLP lab.</p>
           </div>
 
           <div className="intro-card">
             <div className="card-icon">🤖</div>
             <h3>Interests</h3>
             <p>
-              Passionate about AI fields including LLMs, Machine Learning, and
-              Data Analysis.
+              LLM Mathematic Reasoning, <br />
+              LLM Hallucination.
             </p>
           </div>
         </div>
@@ -120,7 +112,25 @@ const About = () => {
           <span className="title-icon">💼</span>
           Work Experience
         </h2>
+
         <div className="timeline">
+          <div className="timeline-item">
+            <div className="timeline-marker"></div>
+            <div className="timeline-content">
+              <div className="timeline-header">
+                <h3>UG Researcher</h3>
+                <span className="timeline-badge">Active</span>
+              </div>
+              <p className="timeline-period">🏫 2024.10 - Present</p>
+              <p className="timeline-location">
+                🏫 NLP Group, Information Hub, HKUST(GZ)
+              </p>
+              <p className="timeline-description">
+                Ongoing research and development as an undergraduate researcher.
+              </p>
+            </div>
+          </div>
+
           <div className="timeline-item">
             <div className="timeline-marker"></div>
             <div className="timeline-content">
@@ -128,11 +138,10 @@ const About = () => {
                 <h3>Program Assistant</h3>
                 <span className="timeline-badge">Current</span>
               </div>
-              <p className="timeline-period">🏫 2024.9 - Present</p>
-              <p className="timeline-location">🏫 HKUSTGZ Library</p>
+              <p className="timeline-period">🏫 2024.9 - 2024.12</p>
+              <p className="timeline-location">🏫 HKUST(GZ) Library</p>
               <p className="timeline-description">
-                Supporting library operations and student services, managing
-                digital resources and academic programs.
+                Developing digital humanities programs for library.
               </p>
             </div>
           </div>
@@ -144,9 +153,9 @@ const About = () => {
                 <h3>Student Representative</h3>
                 <span className="timeline-badge">Active</span>
               </div>
-              <p className="timeline-period">🏫 2024.6 - Present</p>
+              <p className="timeline-period">🏫 2024.6 - 2025.6</p>
               <p className="timeline-location">
-                🏫 Committee on Undergraduate Studies HKUSTGZ
+                🏫 Committee on Undergraduate Studies, HKUST(GZ) Senate
               </p>
               <p className="timeline-description">
                 Representing student interests in academic matters and

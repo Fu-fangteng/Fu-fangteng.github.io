@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import homeBackground from "../assets/imgs/Homepage-bk.jpg";
-import avatar from "../assets/imgs/avatar.jpg";
+import avatar from "../assets/imgs/my_img.jpg";
 import "./Home.css";
 
 const Home = () => {
@@ -23,9 +23,12 @@ const Home = () => {
         </div>
         <div className={`hero-info ${isVisible ? "fade-in" : ""}`}>
           <div className="hero-text">
-            <h1 className="name">Fangteng FU (符芳腾)</h1>
+            <h1 className="name">
+              Fangteng FU <br />
+              (符芳腾)
+            </h1>
             <p className="title">AI Researcher & Developer</p>
-            <p className="description">Sophomore with AI interest, HKUST(GZ)</p>
+            <p className="description">Sophomore major in AI, HKUST(GZ)</p>
             <div className="hero-links">
               <a
                 href="mailto:ffu000@connect.hksut-gz.edu.cn"
@@ -66,11 +69,14 @@ const Home = () => {
               <h2>👋 Introduction</h2>
               <p>
                 Hello! I'm Fangteng FU (or you can call me Magnus). I am now a
-                Sophomore at HKUSTGZ who is intended to major in AI. I was once
-                a summer researcher at CIS Lab, CMA Lab, HKUSTGZ and currently a
-                Program Assistant at HKUSTGZ Library. Since I am not such a
-                scholar now, this page is mainly used to demonstrate my
-                projects, my current works and my future thoughts.
+                Sophomore at HKUSTGZ who is major in AI. I am someone who is
+                fancinated by AI and its applications and willing to contribute
+                to the field.(hopefully interesting as well). I am also a person
+                who is willing to learn and to progress. Every opportunity to
+                get better will be cherished. At the same time, I am a person
+                who loves to explore the world, loves frisbee and loves to make
+                friends. So the fact that you've read this far already brings me
+                great pleasure.
               </p>
             </div>
 
@@ -78,7 +84,7 @@ const Home = () => {
               <h2>🌍 Early Life & Education</h2>
               <p>
                 I was born and raised in Shenzhen, however, I would recognize
-                myself as Haian people. I graduated from Shenzhen Experimental
+                myself as Hai'nan people. I graduated from Shenzhen Experimental
                 School (SZSY). I have always had a great love of science, and I
                 am happy to go on a quest to understand how a matter works. I
                 was fascinated by the rigor and precision of mathematical logic
@@ -90,18 +96,24 @@ const Home = () => {
             <div className="bio-card highlight">
               <h2>👨‍💻 For Professors</h2>
               <p>
-                I aim to publish my own works in my junior year, consequently, I
-                decided to gain as much experience in labs as possible when I am
-                a sophomore. I am always willing to learn and to progress.
-                Currently, I am equipped with the basic coding skills including
-                python, c++, js, html and css. I have also finish courses like
-                Honor Calculus and Applied Statistics and I also self-learn
-                about the Data Structure and Algorithm.
+                All the chats and ideas from you have brought me a lot of
+                benefits. During my freshman and sophomore years of
+                undergraduate studies, I was eager to meet different professors
+                and enthusciaticaly conduct simple research with them, thus
+                gaining experience in the field of computer media related to
+                animation generation and knowledge in the field of mathematical
+                reasoning. I have always done my best in all my projects and
+                assignments, and even though I may not be able to do the best
+                job at the first time, I am always willing to meet with my
+                professors and ask for advice, and then further improve the
+                task.
               </p>
               <p>
-                Now, I am really interesting in AI and Data Science Field. If
-                you are looking for enthusiasm UG student, I will be a good
-                choice. It will be my great honor to hear from you.
+                Now, I am majoring AI and dive a little bit into this domain,
+                specifically, my current resarch is focusing on LLM
+                Reasoning(Math). If you are looking for enthusiasm UG student, I
+                will be a good choice. It will be my great honor to hear from
+                you!
               </p>
             </div>
           </div>
