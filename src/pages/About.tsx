@@ -1,191 +1,151 @@
-import { useEffect, useState } from "react";
+import { useRef } from "react";
+import { motion, useInView } from "framer-motion";
 import myImage from "../assets/imgs/me_good.jpg";
+import ScrollReveal from "../components/ScrollReveal";
+import { DogPeeking, DogSitting } from "../components/DogDeco";
 import "./About.css";
 
-const About = () => {
-  const [isVisible, setIsVisible] = useState(false);
+const skills = [
+  { name:"HTML / CSS",          pct:90 },
+  { name:"Python",              pct:88 },
+  { name:"LaTeX / Git",         pct:85 },
+  { name:"Deep Learning",       pct:82 },
+  { name:"JavaScript / React",  pct:80 },
+  { name:"PyTorch / HuggingFace", pct:78 },
+  { name:"Machine Learning",    pct:75 },
+  { name:"C / C++",             pct:62 },
+];
 
-  useEffect(() => {
-    setIsVisible(true);
-  }, []);
+function SkillRow({ s, i }: { s:typeof skills[0]; i:number }) {
+  const ref = useRef(null);
+  const inView = useInView(ref, { once:true, margin:"-40px" });
+  return (
+    <div ref={ref} className="skill-row">
+      <span className="skill-name">{s.name}</span>
+      <div className="skill-track">
+        <motion.div className="skill-fill"
+          initial={{width:0}}
+          animate={inView?{width:`${s.pct}%`}:{}}
+          transition={{duration:.9, delay:i*.06, ease:[.22,1,.36,1]}}
+        />
+      </div>
+      <span className="skill-pct">{s.pct}%</span>
+    </div>
+  );
+}
 
-  const skills = [
-    { name: "Python", level: 85, icon: "🐍" },
-    { name: "C++", level: 60, icon: "⚡" },
-    { name: "JavaScript", level: 80, icon: "🟨" },
-    { name: "HTML/CSS", level: 90, icon: "🎨" },
-    { name: "React", level: 40, icon: "⚛️" },
-    { name: "Machine Learning", level: 70, icon: "🤖" },
-    { name: "Deep Learning", level: 80, icon: "📊" },
-  ];
+const research = [
+  { year:"2024", active:true,  role:"UG Researcher — NLP Group", org:"Information Hub, HKUST(GZ)", period:"Oct 2024 – Present", desc:"Research on LLM mathematical reasoning and multimodal essay scoring. Two papers at ACL 2025 Findings.", badge:"Active" },
+  { year:"2024", active:false, role:"Program Assistant", org:"HKUST(GZ) Library", period:"Sep – Dec 2024", desc:"Developed digital humanities programs for the library.", badge:"" },
+  { year:"2024", active:false, role:"Summer Researcher — CIS Lab", org:"AI Thrust, HKUST(GZ)", period:"Jun – Sep 2024", desc:"Engineered high-quality multimodal cartoon dataset via automated skeleton extraction and alignment pipelines.", badge:"" },
+];
 
+const leadership = [
+  { year:"2024", active:true,  role:"Student Representative", org:"Committee on Undergraduate Studies, HKUST(GZ) Senate", period:"Jun 2024 – Jun 2025", desc:"Represented student interests in academic affairs; involved in curriculum adjustments for AI and DSA majors.", badge:"" },
+  { year:"2024", active:true,  role:"Captain", org:"HKUST(GZ) Frisbee Club — Zookeepers", period:"2024 – Present", desc:"Leading team training, competitions, and club operations.", badge:"" },
+  { year:"2023", active:false, role:"Founder & President", org:"HKUST(GZ) Street Dancing Club · DtD", period:"2023 – 2024", desc:"Founded and presided over the street dance club in its inaugural year.", badge:"gold" },
+  { year:"2023", active:false, role:"Team Leader, Frontend Developer", org:"Residential College 1, HKUST(GZ)", period:"2023 – 2024", desc:"Led front-end development and UI/UX design for RC1's official website.", badge:"" },
+];
+
+export default function About() {
   return (
     <div className="about">
-      {/* Hero Section */}
-      <div className={`hero-section ${isVisible ? "fade-in" : ""}`}>
-        <div className="hero-content">
-          <div className="avatar-container">
-            <img src={myImage} alt="Fangteng FU" className="avatar-image" />
-            <div className="avatar-glow"></div>
-            <div className="avatar-overlay">
-              <span>👋 Hi, I'm Magnus!</span>
-            </div>
-          </div>
-          <div className="hero-text">
-            <h1 className="hero-name">@FangtengFU</h1>
-            <p className="hero-location">🏫 HKUSTGZ, Guangdong, CHINA</p>
-            <div className="hero-badges">
-              <span className="badge">AI Researcher</span>
-              <span className="badge">Student</span>
-              <span className="badge">Developer</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Introduction Cards */}
-      <section className={`intro-section ${isVisible ? "slide-up" : ""}`}>
-        <div className="intro-grid">
-          <div className="intro-card">
-            <div className="card-icon">👋</div>
-            <h3>Welcome</h3>
-            <p>Hi, I am Fangteng FU, or you can call me Magnus.(・∀・)</p>
-          </div>
-
-          <div className="intro-card">
-            <div className="card-icon">🎓</div>
-            <h3>Education</h3>
-            <p>Now I am a Sophomore studying in HKUST-GZ, majoring in AI.</p>
-          </div>
-
-          <div className="intro-card">
-            <div className="card-icon">🔬</div>
-            <h3>Research</h3>
-            <p>Currently conducting research in HKUST(GZ) NLP lab.</p>
-          </div>
-
-          <div className="intro-card">
-            <div className="card-icon">🤖</div>
-            <h3>Interests</h3>
-            <p>
-              LLM Mathematic Reasoning, <br />
-              LLM Hallucination.
+      {/* ── Page Header ── */}
+      <ScrollReveal>
+        <div className="about-page-header">
+          <div>
+            <p className="section-label">Profile</p>
+            <h1 className="about-headline">
+              Magnus<br/><em>FU.</em>
+            </h1>
+            <p className="about-sub" style={{marginTop:"1.5rem"}}>
+              AI researcher, developer and explorer based at HKUST(GZ).
+              Passionate about LLM reasoning, multimodal AI, and making things
+              that genuinely matter.
             </p>
           </div>
+          <div className="about-photo-col">
+            <img src={myImage} alt="Fangteng FU" className="about-photo"/>
+          </div>
         </div>
+      </ScrollReveal>
+
+      {/* ── Quick Intro Blocks ── */}
+      <div className="intro-row">
+        {[
+          { icon:"🎓", title:"Education", text:"HKUST(GZ) · B.Eng. AI · GPA 3.468/4.3" },
+          { icon:"🔬", title:"Research",  text:"NLP Lab · LLM Reasoning · Multimodal AI" },
+          { icon:"🌐", title:"Language",  text:"IELTS 7.5 · Reading 9 · Listening 8.5" },
+          { icon:"🏅", title:"Campus",    text:"Frisbee Captain · Senate Rep · Dance Founder" },
+        ].map((b,i)=>(
+          <ScrollReveal key={b.title} delay={i*.07} className="intro-block">
+            <div className="intro-block-icon">{b.icon}</div>
+            <div className="intro-block-title">{b.title}</div>
+            <div className="intro-block-text">{b.text}</div>
+          </ScrollReveal>
+        ))}
+      </div>
+
+      {/* ── Skills ── */}
+      <section className="skills-section">
+        <ScrollReveal>
+          <div style={{display:'flex', alignItems:'flex-end', gap:'1rem', marginBottom:'2.5rem'}}>
+            <h2 className="skills-heading" style={{margin:0}}>Skills &amp; <span>Expertise</span></h2>
+            <DogPeeking size={42} style={{flexShrink:0, marginBottom:'-2px'}} />
+          </div>
+        </ScrollReveal>
+        <div className="skills-list">
+          {skills.map((s,i)=><SkillRow key={s.name} s={s} i={i}/>)}
+        </div>
+        <ScrollReveal delay={.3}>
+          <p className="skills-extra">Also: Vue, Scikit-learn, NumPy, Pandas, Hugging Face (Transformers · PEFT), Markdown</p>
+        </ScrollReveal>
       </section>
 
-      {/* Skills Section */}
-      <section className={`skills-section ${isVisible ? "slide-up" : ""}`}>
-        <h2 className="section-title">
-          <span className="title-icon">⚡</span>
-          Skills & Expertise
-        </h2>
-        <div className="skills-grid">
-          {skills.map((skill, index) => (
-            <div
-              key={skill.name}
-              className="skill-item"
-              style={{ animationDelay: `${index * 0.1}s` }}
-            >
-              <div className="skill-header">
-                <div className="skill-info">
-                  <span className="skill-icon">{skill.icon}</span>
-                  <span className="skill-name">{skill.name}</span>
-                </div>
-                <span className="skill-level">{skill.level}%</span>
+      {/* ── Research Timeline ── */}
+      <section className="tl-section">
+        <ScrollReveal>
+          <h2 className="tl-heading">Research Experience</h2>
+        </ScrollReveal>
+        <div className="tl">
+          {research.map((r,i)=>(
+            <ScrollReveal key={r.role} delay={i*.1} className={`tl-item ${r.active?"active-tl":""}`}>
+              <div className={`tl-year ${r.active?"active":""}`}>{r.year}</div>
+              <div className="tl-card">
+                <div className="tl-role">{r.role}</div>
+                <div className="tl-org">{r.org}</div>
+                <div className="tl-period">{r.period}</div>
+                <div className="tl-desc">{r.desc}</div>
+                {r.badge==="Active" && <span className="tl-badge">Active</span>}
               </div>
-              <div className="skill-bar">
-                <div
-                  className="skill-progress"
-                  style={{ width: `${skill.level}%` }}
-                ></div>
-              </div>
-            </div>
+            </ScrollReveal>
           ))}
         </div>
       </section>
 
-      {/* Work Experience */}
-      <section className={`work-experience ${isVisible ? "slide-up" : ""}`}>
-        <h2 className="section-title">
-          <span className="title-icon">💼</span>
-          Work Experience
-        </h2>
-
-        <div className="timeline">
-          <div className="timeline-item">
-            <div className="timeline-marker"></div>
-            <div className="timeline-content">
-              <div className="timeline-header">
-                <h3>UG Researcher</h3>
-                <span className="timeline-badge">Active</span>
-              </div>
-              <p className="timeline-period">🏫 2024.10 - Present</p>
-              <p className="timeline-location">
-                🏫 NLP Group, Information Hub, HKUST(GZ)
-              </p>
-              <p className="timeline-description">
-                Ongoing research and development as an undergraduate researcher.
-              </p>
-            </div>
+      {/* ── Leadership Timeline ── */}
+      <section className="tl-section">
+        <ScrollReveal>
+          <div style={{display:'flex', alignItems:'flex-end', gap:'1rem'}}>
+            <h2 className="tl-heading" style={{flex:1}}>Leadership</h2>
+            <DogSitting size={52} style={{flexShrink:0, marginBottom:'-4px'}} />
           </div>
-
-          <div className="timeline-item">
-            <div className="timeline-marker"></div>
-            <div className="timeline-content">
-              <div className="timeline-header">
-                <h3>Program Assistant</h3>
-                <span className="timeline-badge">Current</span>
+        </ScrollReveal>
+        <div className="tl">
+          {leadership.map((r,i)=>(
+            <ScrollReveal key={r.role} delay={i*.08} className={`tl-item ${r.active?"active-tl":""}`}>
+              <div className={`tl-year ${r.active?"active":""}`}>{r.year}</div>
+              <div className="tl-card">
+                <div className="tl-role">{r.role}</div>
+                <div className="tl-org">{r.org}</div>
+                <div className="tl-period">{r.period}</div>
+                <div className="tl-desc">{r.desc}</div>
+                {r.badge==="gold" && <span className="tl-badge gold">Founder</span>}
               </div>
-              <p className="timeline-period">🏫 2024.9 - 2024.12</p>
-              <p className="timeline-location">🏫 HKUST(GZ) Library</p>
-              <p className="timeline-description">
-                Developing digital humanities programs for library.
-              </p>
-            </div>
-          </div>
-
-          <div className="timeline-item">
-            <div className="timeline-marker"></div>
-            <div className="timeline-content">
-              <div className="timeline-header">
-                <h3>Student Representative</h3>
-                <span className="timeline-badge">Active</span>
-              </div>
-              <p className="timeline-period">🏫 2024.6 - 2025.6</p>
-              <p className="timeline-location">
-                🏫 Committee on Undergraduate Studies, HKUST(GZ) Senate
-              </p>
-              <p className="timeline-description">
-                Representing student interests in academic matters and
-                curriculum development.
-              </p>
-            </div>
-          </div>
-
-          <div className="timeline-item">
-            <div className="timeline-marker"></div>
-            <div className="timeline-content">
-              <div className="timeline-header">
-                <h3>Summer Researcher</h3>
-                <span className="timeline-badge">Completed</span>
-              </div>
-              <p className="timeline-period">🏫 2024.6 - 2024.9</p>
-              <p className="timeline-location">
-                🔬 CIS Lab, CMA Lab, AI Thrust, Information Hub, HKUSTGZ
-              </p>
-              <p className="timeline-description">
-                Conducted research in cartoon animation generation and dataset
-                building, contributing to experimental design and testing
-                phases.
-              </p>
-            </div>
-          </div>
+            </ScrollReveal>
+          ))}
         </div>
       </section>
     </div>
   );
-};
-
-export default About;
+}

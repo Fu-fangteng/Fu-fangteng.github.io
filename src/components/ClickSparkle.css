@@ -1,0 +1,40 @@
+.sparkle-dot {
+  position: fixed;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9996;
+  animation: sparkleFly var(--dur, 0.6s) ease-out forwards;
+  transform-origin: center;
+}
+
+@keyframes sparkleFly {
+  0% {
+    transform: translate(-50%, -50%) rotate(var(--angle)) translateX(0) scale(1);
+    opacity: 1;
+  }
+  60% {
+    opacity: 0.9;
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(var(--angle)) translateX(var(--dist, 45px)) scale(0.3);
+    opacity: 0;
+  }
+}
+
+/* star shape variant */
+.sparkle-star {
+  position: fixed;
+  pointer-events: none;
+  z-index: 9996;
+  font-size: 1rem;
+  animation: starFly 0.7s ease-out forwards;
+  line-height: 1;
+}
+
+@keyframes starFly {
+  0%   { transform: translate(-50%,-50%) scale(0) rotate(0deg);   opacity: 1; }
+  40%  { transform: translate(-50%,-50%) scale(1.2) rotate(180deg); opacity: 1; }
+  100% { transform: translate(-50%,-50%) translateY(var(--dy, -50px)) scale(0.4) rotate(360deg); opacity: 0; }
+}

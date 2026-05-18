@@ -1,0 +1,126 @@
+/* ══════════════════
+   Cursor-following Pet
+   ══════════════════ */
+
+.pet-wrap {
+  position: fixed;
+  z-index: 9997;
+  pointer-events: none;
+  user-select: none;
+  will-change: transform;
+}
+
+/* the clickable character */
+.pet-body {
+  pointer-events: auto;
+  cursor: pointer;
+  position: relative;
+  width: 52px;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ── emoji character ── */
+.pet-emoji {
+  font-size: 2.4rem;
+  display: block;
+  transform-origin: center 80%;
+  line-height: 1;
+  filter: drop-shadow(0 3px 6px rgba(45,110,74,0.25));
+  transition: filter 0.2s ease;
+}
+
+/* ── running frames ── */
+.pet-wrap.running .pet-emoji {
+  animation: petRun 0.28s steps(1) infinite;
+}
+
+@keyframes petRun {
+  0%  { transform: rotate(-8deg) scaleY(0.92) translateY(3px); }
+  50% { transform: rotate( 8deg) scaleY(1.04) translateY(-4px); }
+}
+
+/* ── idle ── */
+.pet-wrap.idle .pet-emoji {
+  animation: petBob 2s ease-in-out infinite;
+}
+
+@keyframes petBob {
+  0%,100% { transform: translateY(0) rotate(0deg); }
+  30%     { transform: translateY(-5px) rotate(-3deg); }
+  60%     { transform: translateY(-3px) rotate(2deg); }
+}
+
+/* ── sleeping ── */
+.pet-wrap.sleeping .pet-emoji {
+  transform: rotate(25deg) translateY(4px);
+  filter: drop-shadow(0 2px 4px rgba(45,110,74,0.15)) grayscale(0.3);
+}
+
+/* ── happy ── */
+.pet-wrap.happy .pet-emoji {
+  animation: petHappy 0.4s ease-in-out 3;
+}
+
+@keyframes petHappy {
+  0%,100% { transform: scale(1) rotate(0deg); }
+  25%     { transform: scale(1.25) rotate(-10deg); }
+  75%     { transform: scale(1.25) rotate(10deg); }
+}
+
+/* ── speech bubble ── */
+.pet-bubble {
+  position: absolute;
+  bottom: calc(100% + 6px);
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  background: var(--bg-card);
+  border: 1.5px solid var(--border-h);
+  color: var(--text-1);
+  font-size: 0.78rem;
+  font-weight: 600;
+  padding: 0.3rem 0.7rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(45,110,74,0.12);
+  animation: bubblePop 0.25s cubic-bezier(0.34,1.56,0.64,1);
+  pointer-events: none;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+.pet-bubble::after {
+  content: '';
+  position: absolute;
+  top: 100%; left: 50%;
+  transform: translateX(-50%);
+  border: 5px solid transparent;
+  border-top-color: var(--bg-card);
+  margin-top: -1px;
+}
+
+@keyframes bubblePop {
+  from { transform: translateX(-50%) scale(0.5); opacity: 0; }
+  to   { transform: translateX(-50%) scale(1);   opacity: 1; }
+}
+
+/* ── sleeping zzz overlay ── */
+.pet-zzz {
+  position: absolute;
+  top: -8px; right: -4px;
+  font-size: 0.9rem;
+  animation: zzz 2s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes zzz {
+  0%   { opacity: 0; transform: translate(0, 0) scale(0.6); }
+  40%  { opacity: 1; transform: translate(4px, -8px) scale(1); }
+  100% { opacity: 0; transform: translate(8px, -16px) scale(0.7); }
+}
+
+/* ── tooltip on hover ── */
+.pet-body:hover .pet-emoji {
+  filter: drop-shadow(0 4px 10px rgba(45,110,74,0.4)) brightness(1.05);
+}

@@ -1,0 +1,55 @@
+/* ══════════════════════════════
+   NekoPet — pixel dog cursor follower
+   Sprite: /dog_sprite.png  96×48px  16×16 tiles  CC0
+   Row 0 = run (cols 0-3)  |  Row 1 = idle (cols 0-5)  |  Row 2 = sleep (cols 0-3)
+   ══════════════════════════════ */
+
+.pet-root {
+  position: fixed;
+  z-index: 9997;
+  pointer-events: none;   /* NEVER blocks page clicks */
+  user-select: none;
+  will-change: left, top;
+}
+
+/* tiny transparent click zone — pointer-events only here */
+.pet-click-zone {
+  position: absolute;
+  inset: -8px;
+  pointer-events: auto;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+/* sprite canvas */
+.pet-sprite {
+  display: block;
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+  /* size set by JS */
+}
+
+/* speech bubble */
+.pet-bubble {
+  position: absolute;
+  bottom: calc(100% + 6px);
+  left: 50%;
+  transform: translateX(-50%) scale(0.7);
+  opacity: 0;
+  transition: opacity .18s ease, transform .22s cubic-bezier(.34,1.56,.64,1);
+  white-space: nowrap;
+  background: #fffdf7;
+  border: 1.5px solid rgba(45,110,74,.3);
+  border-radius: 12px;
+  padding: 4px 11px;
+  font-size: .76rem;
+  font-weight: 600;
+  color: #1a2419;
+  box-shadow: 0 4px 14px rgba(45,110,74,.14);
+  pointer-events: none;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+.pet-bubble.show {
+  opacity: 1;
+  transform: translateX(-50%) scale(1);
+}

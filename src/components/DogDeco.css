@@ -1,0 +1,84 @@
+/* ══════════════════════════════
+   DogDeco — decorative sprite dogs
+   Same sprite: /dog_sprite.png  CC0
+   ══════════════════════════════ */
+
+.dog-deco-sprite {
+  display: inline-block;
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+  background-image: url('/dog_sprite.png');
+  flex-shrink: 0;
+}
+
+/* ── sitting / idle dog: slow cycle through idle row ── */
+.dog-sit {
+  animation: dogSitCycle 1.8s steps(1) infinite, dogSitFloat 3s ease-in-out infinite;
+  filter: drop-shadow(0 4px 6px rgba(45,110,74,0.15));
+}
+@keyframes dogSitCycle {
+  0%    { background-position: var(--f0); }
+  16.6% { background-position: var(--f1); }
+  33.3% { background-position: var(--f2); }
+  50%   { background-position: var(--f3); }
+  66.6% { background-position: var(--f4); }
+  83.3% { background-position: var(--f5); }
+}
+@keyframes dogSitFloat {
+  0%,100% { transform: translateY(0); }
+  50%     { transform: translateY(-5px); }
+}
+
+/* ── running dog: fast cycle through run row ── */
+.dog-run {
+  animation: dogRunCycle 0.5s steps(1) infinite;
+  filter: drop-shadow(0 3px 5px rgba(45,110,74,0.12));
+}
+@keyframes dogRunCycle {
+  0%   { background-position: var(--r0); }
+  25%  { background-position: var(--r1); }
+  50%  { background-position: var(--r2); }
+  75%  { background-position: var(--r3); }
+}
+
+/* ── sleeping dog: slow breathing ── */
+.dog-sleep {
+  animation: dogSleepCycle 2.4s steps(1) infinite, dogSleepBreathe 4s ease-in-out infinite;
+  filter: drop-shadow(0 3px 5px rgba(45,110,74,0.1));
+}
+@keyframes dogSleepCycle {
+  0%   { background-position: var(--s0); }
+  25%  { background-position: var(--s1); }
+  50%  { background-position: var(--s2); }
+  75%  { background-position: var(--s3); }
+}
+@keyframes dogSleepBreathe {
+  0%,100% { transform: scaleY(1) translateY(0); }
+  50%     { transform: scaleY(1.04) translateY(-1px); }
+}
+
+/* ── peeking dog: peeks up and down ── */
+.dog-peek {
+  animation: dogPeek 3s ease-in-out infinite;
+  filter: drop-shadow(0 3px 5px rgba(45,110,74,0.12));
+}
+@keyframes dogPeek {
+  0%,70%,100% { transform: translateY(0); clip-path: inset(40% 0 0 0); }
+  20%,50%     { transform: translateY(-14px); clip-path: inset(0 0 0 0); }
+}
+
+/* ── zzz float above sleeping dog ── */
+.zzz-float {
+  font-size: .7rem;
+  color: rgba(90,117,96,.6);
+  font-weight: 700;
+  animation: zzzUp 2s ease-in-out infinite;
+  display: inline-block;
+}
+.zzz-float:nth-child(2) { animation-delay: .6s; font-size: .85rem; }
+.zzz-float:nth-child(3) { animation-delay: 1.2s; font-size: .55rem; }
+@keyframes zzzUp {
+  0%   { opacity:0; transform:translate(0,0) scale(.6); }
+  40%  { opacity:1; transform:translate(4px,-7px) scale(1); }
+  100% { opacity:0; transform:translate(8px,-16px) scale(.7); }
+}
