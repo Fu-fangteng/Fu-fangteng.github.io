@@ -6,14 +6,16 @@ import { DogPeeking, DogSitting } from "../components/DogDeco";
 import "./About.css";
 
 const skills = [
-  { name:"HTML / CSS",          pct:90 },
-  { name:"Python",              pct:88 },
-  { name:"LaTeX / Git",         pct:85 },
-  { name:"Deep Learning",       pct:82 },
-  { name:"JavaScript / React",  pct:80 },
-  { name:"PyTorch / HuggingFace", pct:78 },
-  { name:"Machine Learning",    pct:75 },
-  { name:"C / C++",             pct:62 },
+  { name:"Python",                   pct:88 },
+  { name:"Linear Algebra",           pct:86 },
+  { name:"LaTeX / Git",              pct:85 },
+  { name:"Natural Language Processing", pct:83 },
+  { name:"Deep Learning",            pct:82 },
+  { name:"PyTorch / HuggingFace",    pct:78 },
+  { name:"Machine Learning",         pct:75 },
+  { name:"C / C++",                  pct:62 },
+  { name:"JavaScript / React",       pct:61 },
+  { name:"HTML / CSS",               pct:60 },
 ];
 
 function SkillRow({ s, i }: { s:typeof skills[0]; i:number }) {
