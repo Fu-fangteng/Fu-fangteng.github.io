@@ -75,7 +75,7 @@ export default function About() {
       {/* ── Quick Intro Blocks ── */}
       <div className="intro-row">
         {[
-          { icon:"🎓", title:"Education", text:"HKUST(GZ) · B.Eng. AI · GPA 3.468/4.3" },
+          { icon:"🎓", title:"Education", text:"HKUST(GZ) · B.Eng. AI · Top 30%" },
           { icon:"🔬", title:"Research",  text:"NLP Lab · LLM Reasoning · Multimodal AI" },
           { icon:"🌐", title:"Language",  text:"IELTS 7.5 · Reading 9 · Listening 8.5" },
           { icon:"🏅", title:"Campus",    text:"Frisbee Captain · Senate Rep · Dance Founder" },

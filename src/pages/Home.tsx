@@ -38,7 +38,7 @@ export default function Home() {
           <motion.div className="hero-meta" custom={.28} variants={fadeUp} initial="hidden" animate={ready?"visible":"hidden"}>
             <span className="chip">NLP Lab</span>
             <span className="chip">ACL 2025</span>
-            <span className="chip">GPA 3.468</span>
+            <span className="chip">Top 30%</span>
             <span className="chip-gold chip">IELTS 7.5</span>
           </motion.div>
 
@@ -75,7 +75,7 @@ export default function Home() {
           {[
             { num:"2+", label:"Years at HKUST" },
             null,
-            { num:"3.468", label:"Cumulative GPA" },
+            { num:"Top 30%", label:"Academic Standing" },
             null,
             { num:"7.5", label:"IELTS Score" },
             null,
@@ -115,12 +115,12 @@ export default function Home() {
             </p>
           </ScrollReveal>
 
-          {/* GPA */}
+          {/* Academic Standing */}
           <ScrollReveal className="bc bc-gpa" delay={.08}>
             <div className="bc-deco">A</div>
-            <div className="bc-label">Cumulative GPA</div>
-            <div className="bc-big">3.47</div>
-            <div className="bc-sub">out of 4.3 · HKUST(GZ)</div>
+            <div className="bc-label">Academic Standing</div>
+            <div className="bc-big">Top 30%</div>
+            <div className="bc-sub">B.Eng. AI · HKUST(GZ)</div>
           </ScrollReveal>
 
           {/* Papers */}
